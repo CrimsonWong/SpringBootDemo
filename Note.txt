@@ -1,0 +1,45 @@
+Saved items samples in Redis:
+
+12xvxc345ssdsds-508_plan_planCostShares: [1234vxc2324sdf-501_membercostshare]
+1234vxc2324sdf-501_membercostshare: {deductible=2000, _org=example.com, copay=23, objectId=1234vxc2324sdf-501, objectType=membercostshare}
+27283xvx9asdff-504_planservice_linkedService: [1234520xvc30asdf-502_service]
+1234520xvc30asdf-502_service: {name=Yearly physical, _org=example.com, objectId=1234520xvc30asdf-502, objectType=service}
+27283xvx9asdff-504_planservice_planserviceCostShares: [1234512xvc1314asdfs-503_membercostshare]
+1234512xvc1314asdfs-503_membercostshare: {deductible=10, _org=example.com, copay=0, objectId=1234512xvc1314asdfs-503, objectType=membercostshare}
+27283xvx9asdff-504_planservice: {_org=example.com, objectId=27283xvx9asdff-504, objectType=planservice}
+27283xvx9sdf-507_planservice_linkedService: [1234520xvc30sfs-505_service]
+1234520xvc30sfs-505_service: {name=well baby, _org=example.com, objectId=1234520xvc30sfs-505, objectType=service}
+27283xvx9sdf-507_planservice_planserviceCostShares: [1234512xvc1314sdfsd-506_membercostshare]
+1234512xvc1314sdfsd-506_membercostshare: {deductible=10, _org=example.com, copay=175, objectId=1234512xvc1314sdfsd-506, objectType=membercostshare}
+27283xvx9sdf-507_planservice: {_org=example.com, objectId=27283xvx9sdf-507, objectType=planservice}
+12xvxc345ssdsds-508_plan_linkedPlanServices: [27283xvx9sdf-507_planservice, 27283xvx9asdff-504_planservice]
+12xvxc345ssdsds-508_plan: {planType=inNetwork, _org=example.com, creationDate=12-12-2017, objectId=12xvxc345ssdsds-508, objectType=plan}
+
+
+Updated user case:
+
+{
+    "linkedPlanServices": [
+        {
+            "linkedService": {
+                "_org": "example.com",
+                "objectId": "001441618-502",
+                "objectType": "service",
+                "name": "Yearly physical"
+            },
+            "planserviceCostShares": {
+                "deductible": 10,
+                "_org": "example.com",
+                "copay": 0,
+                "objectId": "001441618-503",
+                "objectType": "membercostshare"
+            },
+            "_org": "example.com",
+            "objectId": "001441618",
+            "objectType": "planservice"
+        }
+    ]
+}
+
+
+
