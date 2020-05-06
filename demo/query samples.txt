@@ -1,0 +1,75 @@
+GET /wholeplan/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+GET /wholeplan/_search
+{
+  "query": {
+    "match": {
+      "objectId" : "001441618"
+    }
+  }
+}
+
+GET /wholeplan/_search
+{
+  "query": { 
+    "bool": { 
+      "must": [
+        { "match": { "objectType":"service"}}
+      ]
+    }
+  }
+}
+
+GET /wholeplan/_search
+{
+  "query": {
+    "bool": {
+      "filter": {
+        "term": {
+          "_id" : "1234vxc2324sdf-501"
+        }
+      }
+    }
+  }
+}
+
+GET /wholeplan/_search
+{
+    "query": {
+        "has_child" : {
+            "type" : "linkedService",
+            "query" : {
+                "match_all" : {}
+            }
+        }
+    }
+}
+
+GET /wholeplan/_search
+{
+    "query": {
+        "has_parent" : {
+            "parent_type" : "linkedPlanServices",
+            "query" : {
+                "match_all" : {}
+            }
+        }
+    }
+}
+
+GET /wholeplan/_search
+{
+  "size": 0,
+  "aggs": {
+    "group_by_objectType": {
+      "terms": {
+        "field": "objectType.keyword"
+      }
+    }
+  }
+}
