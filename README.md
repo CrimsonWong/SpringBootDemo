@@ -1,8 +1,10 @@
-# SpringBootDemo
-This is my final project of INFO 7255.
+# Medical plans storage service with optimization 
+This is my final project of INFO 7255, and I made some optimization. Below are key features of this project. 
 
 This project includes the following parts:
-- Used JSON Schema to verify JSON format, traversed to separate the specific data by the object and stored each object as one document in Redis, then implemented CRUD function.
-- Generated a bare token and used token verification on any endpoints before sending Http request.
-- Generated e-Tag for each response, if the client requested cached content, then respond not-modified. 
-- Created an event to trigger the Redis queue to store documents, retrieved it from the queue when listening to the event and indexed this document in Elasticsearch (using parent-child mode to save the hierarchical relationship). Then used the Kibana console to send a query request to Elasticsearch to query the index.
+- Built a medical plan service system to store medical plans, provided crud APIs and search APIs to the front end. 
+- Used JSON Schema at the controller side to verify the format of the medical plans data in an HTTP request. 
+- Used JWT to implement authentication on every endpoint; Generated e-Tag for each response to save bandwidth.
+- Enhanced the scalability and performance of the data query and storage system by partitioning the data vertically under different column families and applied distributed cache mechanism using Redis. 
+- Developed an indexing engine for the documents, flattened the data into parent-child mode in Elasticsearch. 
+- Implemented a Message Queue by using Redis queue between storing and indexing, to provide high throughput and low latency of processed data.  
